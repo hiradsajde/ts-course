@@ -1,8 +1,8 @@
 "use strict";
 class person {
-    constructor(name, age) {
+    constructor(name) {
         this.name = name;
-        this.age = age;
+        console.log(name);
     }
 }
-console.log('hirad');
+const me = new person('hirad');
