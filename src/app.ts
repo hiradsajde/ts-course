@@ -1,5 +1,7 @@
-const information : Array<string | number> = ['hirad' , 1]
+function merge<T,U>(objA : T , objB : U){
+    return {...objA , ...objB}
+}
 
-const promise : Promise<string> = new Promise((resolve , reject) => {
-    setTimeout(() => resolve('hi') , 2000)
-})
+const mergeObj = merge({name : 'hirad'} , {age : 19})
+
+console.log(mergeObj.age)
