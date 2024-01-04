@@ -2,8 +2,11 @@ interface lengthy {
     length : number , 
 }
 
-function Count<T extends lengthy>(length : T){
-    console.log(length.length)
+function Count<T extends lengthy , U extends keyof T>(length : T , name : U){
+    console.log(name)
 }
 
-Count("HI")
+Count({
+    length : 5 , 
+    name : 'hirad'
+} , 'name')
