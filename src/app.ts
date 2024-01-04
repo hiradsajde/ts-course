@@ -1,7 +1,9 @@
-function merge<T,U>(objA : T , objB : U){
-    return {...objA , ...objB}
+interface lengthy { 
+    length : number , 
 }
 
-const mergeObj = merge({name : 'hirad'} , {age : 19})
+function Count<T extends lengthy>(length : T){
+    console.log(length.length)
+}
 
-console.log(mergeObj.age)
+Count("HI")
