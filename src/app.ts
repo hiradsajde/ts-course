@@ -1,18 +1,6 @@
-class DataStorage<T>{
-    constructor(public data : T[]){
-        
-    }
-    add(value : T){
-        this.data.push(value)
-    }
-    delete(value : T){
-        this.data = this.data.splice(this.data.indexOf(value) , 1)
-    }
-    describe(){
-        console.log(this.data)
-    }
+function storage<T extends any[], U extends keyof T>(list : T , key : U){
+    return list[key]
 }
 
-const Data = new DataStorage<string>(['hirad'])
-Data.add('roya')
-Data.describe()
+const list = storage(['hirad' , 'hooman'] , 1)
+console.log(list)
