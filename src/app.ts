@@ -1,12 +1,18 @@
-interface lengthy { 
-    length : number , 
+class DataStorage<T>{
+    constructor(public data : T[]){
+        
+    }
+    add(value : T){
+        this.data.push(value)
+    }
+    delete(value : T){
+        this.data = this.data.splice(this.data.indexOf(value) , 1)
+    }
+    describe(){
+        console.log(this.data)
+    }
 }
 
-function Count<T extends lengthy , U extends keyof T>(length : T , name : U){
-    console.log(name)
-}
-
-Count({
-    length : 5 , 
-    name : 'hirad'
-} , 'name')
+const Data = new DataStorage<string>(['hirad'])
+Data.add('roya')
+Data.describe()
